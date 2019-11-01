@@ -4,7 +4,7 @@ server.use(express.json());
 
 const projectRouter = require("./data/Routers/projectRouter");
 
-server.use("/projectRouter", logger, projectRouter);
+server.use("/projects", logger, projectRouter);
 
 server.get("/", (req, res) => {
 	res.send("Sprint API");
