@@ -26,13 +26,23 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+API routers and express.json
+
 - [ ] Describe Middleware?
+
+Middleware are functions that perform a general action when added as a parameter to a CRUD operation or globally.
 
 - [ ] Describe a Resource?
 
+Data held in an API
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+a .json message that confirms an action was completed.
+
 - [ ] How can we partition our application into sub-applications?
+
+by using routes that a separated by category
 
 ## Project Setup
 
