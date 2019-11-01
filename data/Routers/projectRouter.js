@@ -36,6 +36,19 @@ router.get("/:id", validateId, (req, res) => {
 		});
 });
 
+router.get("/projectId/:id", (req, res) => {
+	const projId = req.params.id;
+	console.log(projId);
+	projectDb
+		.getProjectActions(projId)
+		.then(actions => {
+			res.status(200).json(actions);
+		})
+		.catch(error => {
+			res.status(500).json(error);
+		});
+});
+
 router.put("/:id", validateId, validatePost, (req, res) => {
 	projectDb
 		.update(req.params.id, req.body)
@@ -54,19 +67,6 @@ router.delete("/:id", validateId, (req, res) => {
 			res.status(200).json(project);
 		})
 		.catch(error => [res.status(500).json(error)]);
-});
-
-router.get("/projectId/:id", (req, res) => {
-	const projId = req.params.id;
-	console.log(projId);
-	projectDb
-		.getProjectActions(projId)
-		.then(actions => {
-			res.status(200).json(actions);
-		})
-		.catch(error => {
-			res.status(500).json(error);
-		});
 });
 
 function validateId(req, res, next) {
